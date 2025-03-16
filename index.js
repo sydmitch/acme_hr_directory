@@ -29,7 +29,7 @@ async function init() {
     );
     CREATE TABLE employees(
       id SERIAL PRIMARY KEY,
-      name VARCHAR(255) NOT NULL,
+      txt VARCHAR(255) NOT NULL,
       created_at TIMESTAMP DEFAULT now(),
       updated_at TIMESTAMP DEFAULT now(),
       department_id INTEGER REFERENCES departments(id) NOT NULL
@@ -38,15 +38,12 @@ async function init() {
     INSERT INTO departments(name) VALUES('HR');
     INSERT INTO departments(name) VALUES('Accounting');
     INSERT INTO departments(name) VALUES('IT');
-    INSERT INTO employees(name, department_id) VALUES('Jane Doe', 1,
-      (SELECT id FROM departments WHERE name = 'HR');
-    );
-    INSERT INTO employees(name, department_id) VALUES('John Smith', 2
-      (SELECT id FROM departments WHERE name = 'Accounting');
-    );
-    INSERT INTO employees(name, department_id) VALUES('Harry Potter', 3
-      (SELECT id FROM departments WHERE name = 'IT');
-    );
+    INSERT INTO employees(txt, department_id) VALUES('Jane Doe',
+      (SELECT id FROM departments WHERE name = 'HR'));
+    INSERT INTO employees(txt, department_id) VALUES('John Smith',
+      (SELECT id FROM departments WHERE name = 'Accounting'));
+    INSERT INTO employees(txt, department_id) VALUES('Harry Potter',
+      (SELECT id FROM departments WHERE name = 'IT'));
   `
   await client.query(SQL);
   // start the server
