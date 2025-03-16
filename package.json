@@ -1,0 +1,30 @@
+{
+  "name": "acme_hr_directory",
+  "version": "1.0.0",
+  "description": "Block 33 workshop",
+  "main": "index.js",
+  "scripts": {
+    "start:dev":"nodemon server.js",
+    "start":"node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sydmitch/acme_hr_directory.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sydmitch/acme_hr_directory/issues"
+  },
+  "homepage": "https://github.com/sydmitch/acme_hr_directory#readme",
+  "dependencies": {
+    "express": "^4.21.2",
+    "morgan": "^1.10.0",
+    "pg": "^8.14.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
