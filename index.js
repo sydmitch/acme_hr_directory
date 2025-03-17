@@ -22,7 +22,7 @@ async function init() {
   // seed database
   const SQL = /*sql*/ `
     DROP TABLE IF EXISTS employees;
-    DROP TABLE IF EXISTS departmemts;
+    DROP TABLE IF EXISTS departments;
     CREATE TABLE departments(
       id SERIAL PRIMARY KEY,
       name VARCHAR(255) NOT NULL
